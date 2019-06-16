@@ -1,14 +1,13 @@
 import _ from 'lodash';
-import './style.css';
-import Image from './bir.jpg';
+import printMe from './print';
 
 function component(){
     const element = document.createElement('div');
+    const btn = document.createElement('button');
+    btn.innerHTML='click me';
+    btn.onclick = printMe;
     element.innerHTML = _.join(['hello', 'webpack'], ' ');
-    element.classList.add('red');
-    var img= document.createElement('img');
-    img.src=Image;
-    element.appendChild(img);
+    element.appendChild(btn);
     return  element;
 }
 
